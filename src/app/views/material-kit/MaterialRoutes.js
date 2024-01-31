@@ -1,7 +1,9 @@
 import { lazy } from 'react';
 import Loadable from 'app/components/Loadable';
 
-const AppTable = Loadable(lazy(() => import('./tables/AppTable')));
+const SearchClientPage = Loadable(lazy(() => import('./client/SearchClientPage')));
+const AddClientPage = Loadable(lazy(() => import('./client/AddClientPage')));
+const UpdateClientInfoTemplate = Loadable(lazy(() => import('./settings/UpdateClientInfoTemplate')));
 const AppForm = Loadable(lazy(() => import('./forms/AppForm')));
 const AppButton = Loadable(lazy(() => import('./buttons/AppButton')));
 const AppIcon = Loadable(lazy(() => import('./icons/AppIcon')));
@@ -17,7 +19,9 @@ const AppAutoComplete = Loadable(lazy(() => import('./auto-complete/AppAutoCompl
 const AppExpansionPanel = Loadable(lazy(() => import('./expansion-panel/AppExpansionPanel')));
 
 const materialRoutes = [
-  { path: '/material/table', element: <AppTable /> },
+  { path: '/client/list', element: <SearchClientPage /> },
+  { path: '/settings/client-template', element: <UpdateClientInfoTemplate/>},
+  { path: '/client/add', element: <AddClientPage /> },
   { path: '/material/form', element: <AppForm /> },
   { path: '/material/buttons', element: <AppButton /> },
   { path: '/material/icons', element: <AppIcon /> },
